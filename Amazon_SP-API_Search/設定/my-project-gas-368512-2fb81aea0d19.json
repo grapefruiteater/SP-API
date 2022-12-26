@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "my-project-gas-368512",
+  "private_key_id": "2fb81aea0d1902f2e936b3a509fa0dd018afb1d2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDZcJqSyuqRN2+n\nz0cXkFH3ACtMgYx4Lst7G5+r7BxfsJtq8ML0KaECY45GVxI9kpGJMCQzQhTgbTkk\nQ9izKirlugzTVA9Ub1AQnVnPVY+tHjC1I+Rl60Z9c2eOjp3HvXeC6+QUXchTeMMm\noEq55iTpZczIerrjikfF2dT3uB3UxuMAO/oTbsORHr6H9mkZU55/pl2P42DqEHto\nv1cQxj4j6jyvkMgjlw7RI6yupK0uO3vVusdJkKT8wJXEsOfb9dUPNBlG11XpHLnu\nfLQosvBYXrrBQxf/Kz+/pCnZrIXgnJ5AMqxJ3cjK/uIY99KX1UNpoE8xB1rYpmR3\nQhG9PZwvAgMBAAECggEAIE6oUN5AewIjH2pfVEN3wjzusgffoK3HQwvoLgm/b4JU\nnU+Xj+KtjybOqWnfhnGEGT+jaVBMvMnNvzMre/dsd0StCitHudJuMYHHqdQ7LEw7\njXZ/RZtvFk2y2c4b6GUg4D1/Xn1OugRL7q3LXJKy8lDTXAhMQ2m031NN3t6m5AnA\n1SLrbZNFF3tMCplgWuzDxqhDFYVF7lZOqKfkVEOLvub4foHMi3QLEw2dTo89n2MW\nkvZdlhIpSOWoM1KsIGNf1QEEMuK2rygdfePOLy8VoEEVhh+4nSSlZIRxUs7KV9HX\ntFw2LaksrWvzbUM0InVniBvrNaGbUPTsEzOv7Dz5dQKBgQD4fBBhwLfVWrTANEpt\nymziOJIE7l4tHIvgc5d6zS9nphz90HbZlt9Sowe0gnNrg6HaVsTTupDNkVRvT+q2\nROYl4gLBwNXvRhh76gq3vx/QT9utJIkZ7Dqc3zWHO/J/NRMQUl0FqfmgTdw8V2yV\nwxY0gBMW62ytjdQus+4qipAu6wKBgQDgBCuUhjmPzFK9P5ab6Bc1ivkC5DV984A9\nwpk17CASbypk6fOPX3GeXVWgmH5IIWLvboE1eDZlsz+jc/nGuBugmhPF+IcLfgt3\n16ObTAfbtaB26Wvnkr4XsUkBTnjcro5JNuj/1+taTllE6SjgOEeYofpk7/7Kgxa/\nXLlC6bmezQKBgQCS+HaMCvvwsrzULlmThLZQO5uKVR7Y2diWAminVrNiP+tH6MRT\nQJyIeSs2hi4UeoAB725tuRyqqfnh+Mff1PK3l22AAjnHU5Npv21lbyM3B/Tr/P8m\nmQW2AYPcoAV3XgIPlle04Otn+IV6H093aTM6DEK+PLNEF+5XTU9iVCChzwKBgBgi\nuuNMtuT0WbHEKSDxF5cQOxYBqnXAh3+f+Mvjfe0ehw3KWxCGcwJiAfjElU6GMlej\nq04sfofkkSW2OCId8fQSxbCdv0cQtIGb/SedQHd+kSRer96KY+q/kiMO5ly4feIL\nhX0TMWtQZ7PR/zJxPd2HDihT5zrAdvH1NoysC/C9AoGAIYJR1nm80SI++mIKzLLf\neze4k0cvrEZ9YrGiicyRKzYwGcYKjcVPrseBVgHjtyts3k2MkTRkK8lF95BLlo1Z\nslEDwCr7K6F/ont0Ndq0Qx5Ljeba50tSUjscTP/xmMR+46Cm1jy5udkzq7GxAVPQ\nmyazTM2tptxGbDE1ZrMSgmI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "pythongas@my-project-gas-368512.iam.gserviceaccount.com",
+  "client_id": "107924707202651978462",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pythongas%40my-project-gas-368512.iam.gserviceaccount.com"
+}

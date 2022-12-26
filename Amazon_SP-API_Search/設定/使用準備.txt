@@ -1,0 +1,98 @@
+☆使用準備
+
+〇batファイルの実行と一部修正
+1. 設定/Install.batを実行 (初回一回のみ、既に実行済のためスキップ可能)
+2. SP-API moduleを日本語対応させるため、一部修正(初回一回のみ、既に実行済のためスキップ可能)
+   "C:\users\administrator\appdata\local\programs\python\python310\lib\site-packages\sp_api\api\catalog\"
+    のフォルダへ移動後、
+    catalog.pyをメモ帳などでテキストファイルとして開いて頂き、79行目の
+　 kwargs.update({'Query': urllib.parse.quote_plus(kwargs.pop('Query'))})
+    を
+　 kwargs.update({'Query': urllib.parse.unquote_plus(kwargs.pop('Query'))})
+　 と変更する。
+
+〇AWS設定　(既に作成済のため、取得済のAPIキーを使いまわして大丈夫です)
+
+参考URL
+https://zats-firm.com/2021/09/07/amazon-mws-%E3%81%8B%E3%82%89-sp-api-%E3%81%B8%E3%81%AE%E7%A7%BB%E8%A1%8C-%E6%BA%96%E5%82%99%E7%B7%A8/
+
+・IAMユーザーの作成
+1. IAM->ユーザー->ユーザーを追加を押す
+2. ユーザー名にAWS_IAM_SPAPI_Access_User
+　 プログラムによるアクセスにチェックを入れる
+3. 次のステップ：アクセス権限を押す
+4. この場面はそのままで、次のステップ：タグを押す
+5. この画面もこのままで、次のステップ：確認を押す
+6. 画面下にあるユーザーの作成を押す
+
+・IAMポリシーの作成
+1. IAM->ポリシー->ポリシーを作成を押す
+2. JSONのタブを選択
+3. デフォルトのものを消して、以下をコピペする
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "execute-api:Invoke",
+            "Resource": "arn:aws:execute-api:*:*:*"
+        }
+    ]
+}
+4. 次のステップ：タグを押す
+5. この場面はそのままで、次のステップ：確認を押す
+6. 名称にAWS_IAM_SPAPI_Policyを入れて、画面下にあるポリシーの作成を押す
+7. IAM->ユーザー->先ほど作成したAWS_IAM_SPAPI_Access_Userを押す
+8. アクセス権限の追加を押す
+9. 既存のポリシーを直接アタッチを押す
+10. ポリシーのフィルタで先ほど作成したAWS_IAM_SPAPI_Policyを検索し、チェックを入れる
+11. 次のステップ：確認を押す
+12. アクセス権限の追加を押す
+
+・IAMロールの作成
+1. IAM->ロール->ロールを作成を押す
+2. カスタム信頼ポリシーを押す
+3.下部の入力画面のテキストを消して、下記に置き換える・
+　*******はユーザーのARNで確認する
+
+{
+"Version": "2012-10-17",
+"Statement": [
+{
+"Sid": "Statement1",
+"Effect": "Allow",
+"Principal": {
+"AWS": "arn:aws:iam::**********:user/AWS_IAM_SPAPI_Access_User"
+},
+"Action": "sts:AssumeRole"
+}
+]
+}
+4.次へを押す
+5.トークン作成などの作業過程で作成したポリシー(例、AWS_IAM_SPAPI_Policy)にチェックを入れる
+6.次へを押す
+7.ロール名をasin-pickにして、ロールを作成を押す
+8. 作成したロール名をクリックして、信頼関係を押し、信頼されたエンティティに上記で置き換えたテキストが記載されているか確認する。
+
+〇セラーセントラル設定
+1. 開発者プロフィールを押す
+2. ロールで、"制限"とあるもの以外すべてにチェックを入れる
+3. プライベート開発者：自社をAmazonのサービスAPIと統合するアプリケーションを構築しています。を選択する
+4. 登録を押す
+5. 新しいアプリクライアントを追加を押す
+6. アプリ名をSPAPI_Access_Sample_App、APIタイプをSP-APIにする
+7. IAM ARNはarn:aws:iam::**********:role/AWS_IAM_SPAPI_Access_Userを入れる
+8. ロールに商品の出品にチェックを入れる
+　
+これでデベロッパーセントラル画面に登録したアプリケーションが表示されます。
+9. 登録したアプリケーション名の横の表示をクリックして、クライアントIDとクライアント機密情報を取得する
+10. 登録したアプリケーション名の横のアプリの編集->承認を押して、リフレッシュトークンを取得する
+ 
+
+
+
+
+
+
+
+
